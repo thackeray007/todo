@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { AddPage } from '../pages/add/add';
+import { CompletedPage } from '../pages/completed/completed';
 
 @Component({
   templateUrl: 'app.html'
@@ -41,4 +43,15 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+  gotoadd(){
+    this.nav.push(AddPage)
+  }
+  gotocompleted(){
+    this.nav.push(CompletedPage)
+  }
+  gotohome(){
+    this.nav.push(HomePage)
+  }
 }
+
+
