@@ -4,23 +4,30 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>TODO</ion-title>
+    
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card>
-
-    <ion-card-header>
-      
-    </ion-card-header>
+<ion-content>
   
-    <ion-card-content >
-      
-    </ion-card-content>
-  
-  </ion-card>
+  <ion-list   *ngFor="let todo of todoarray">
+    <ion-row>
+    <ion-item  id="{{todo.id}}">{{todo.name}}
+     
+      <!---<ion-label item.name></ion-label>-->
+        
+         
+         <button style="float:right;padding: 15px" ion-button   color="danger" (click)='delete1(todo)' ><ion-icon name="trash" ></ion-icon></button>
+         <button style="float:right;padding: 15px" ion-button color="secondary" (click)='complete(todo)' ><ion-icon name="checkmark" ></ion-icon></button>
+              </ion-item>
+        <!---<ion-label item.name></ion-label>-->
+        
+      </ion-row>           
+</ion-list>
 
-  <button  ion-button   full  (click)=gotoadd() >ADD TASK</button>
+<ion-list style="right:15px ;position:fixed ;bottom: 15px;padding: 15px;opacity:0.8; ">
+  <button  ion-button full (click)=gotoadd()>+</button>
+  </ion-list>
 </ion-content>
 <ion-tabs>
   <ion-tab  tab-Title="add" [root]="addtab" tabIcon="basketball" > </ion-tab>

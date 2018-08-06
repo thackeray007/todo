@@ -6,13 +6,37 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar> <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>completed</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)=deleteall() icon-only>
+          <ion-icon name="trash" ></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+
+    <ion-content >
+        <hr>
+        <ion-list  *ngFor="let complete of completedarray" >
+          
+            <ion-row>          
+           <ion-item  dir="rtl" id="{{complete.id}}">{{complete.name}}
+              
+                  <button  style="float: left;padding: 15px" ion-button  color="danger" (click)='delete(complete)'><ion-icon name="trash" ></ion-icon></button>
+              
+      
+          </ion-item>
+        </ion-row>   
+        
+       
+
+        </ion-list>
+      
 
 </ion-content>

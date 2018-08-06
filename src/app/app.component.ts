@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { AddPage } from '../pages/add/add';
 import { CompletedPage } from '../pages/completed/completed';
+import { MapsPage } from '../pages/maps/maps';
 
 @Component({
   templateUrl: 'app.html'
@@ -44,13 +45,17 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
   gotoadd(){
-    this.nav.push(AddPage)
+    this.nav.setRoot(AddPage)
   }
   gotocompleted(){
-    this.nav.push(CompletedPage)
+    this.nav.setRoot(CompletedPage)
   }
   gotohome(){
-    this.nav.push(HomePage)
+    this.nav.setRoot(HomePage)
+  }
+  
+  gotomap(){
+    this.nav.setRoot(MapsPage)
   }
 }
 

@@ -6,8 +6,12 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>add</ion-title>
+  <ion-navbar> 
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ADD</ion-title>
+   
   </ion-navbar>
 
 </ion-header>
@@ -15,12 +19,13 @@
 
 <ion-content padding>
 
-  <ion-item>
-    <ion-label color="primary" floating>Add to-do task</ion-label>
+  <ion-item  style="padding-right:10px " >
+    <ion-label color="primary" floating>Add a To-dO </ion-label>
     <ion-input id="addtodo" [(ngModel)]="dataToStore"></ion-input>
    
 
    
   </ion-item>
-  <button full ion-button (click)=setvalue()>add task</button>
+  <button full ion-button style="margin-top:30px" (click)=setvalue()>add task</button>
+  
 </ion-content>
